@@ -1,0 +1,106 @@
+.wrapper {
+    margin: 0 auto;
+    background-color: var(--gray-600);
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 87.5%;
+    }
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--gray-700);
+    height: 12.5rem;
+}
+
+.input {
+    height: 3.375rem;
+    padding: 1rem;
+    background-color: var(--gray-500);
+    border: 1px solid;
+    border-color: var(--gray-700);
+    border-radius: 8px;
+    color: var(--gray-100);
+}
+
+.input::placeholder {
+    color: var(--gray-300);
+}
+
+.input:focus-visible {
+    outline-style: solid;
+    outline-color: var(--purple-600);
+}
+
+.button {
+    background-color: var(--blue-600);
+    height: 3.25rem;
+    font-weight: 700;
+    padding: 1rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--gray-100);
+    border: none;
+    transition: 0.2s;
+}
+
+.button:hover {
+    background-color: var(--blue-300);
+    cursor: pointer;
+}
+
+.trashIcon {
+    color: var(--gray-300);
+    padding: 0.3125rem;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+.trashIcon:hover {
+    color: var(--red-300);
+    background-color: var(--blue-400);
+}
+
+.radio {
+    position: absolute;
+    opacity: 0;
+    height: 0;
+    width: 0;
+}
+
+.radioLabel {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.radioButton {
+    height: 20px;
+    width: 20px;
+    border-radius: 100px;
+    border: 1px solid green;
+    display: block;
+}
+
+input[type="radio"] + label {
+    color: #ccc;
+    font-style: italic;
+    -webkit-box-shadow: 0px 0px 1px rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 0px 1px 1px rgba(255, 255, 255, 0.2);
+}
+
+input[type="radio"]:checked + label span {
+    color: red;
+}
+
+input[type="radio"]:checked + label .radioButton {
+    background: radial-gradient(circle, red 45%, transparent 50%)
+}
