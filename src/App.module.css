@@ -1,5 +1,4 @@
-.wrapper {
-    margin: 0 auto;
+body {
     background-color: var(--gray-600);
 }
 
@@ -7,6 +6,10 @@
     html {
         font-size: 87.5%;
     }
+}
+
+.wrapper {
+    margin: 0 auto;
 }
 
 .header {
@@ -69,38 +72,74 @@
     background-color: var(--blue-400);
 }
 
-.radio {
-    position: absolute;
+.radioLabel {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.Checkbox {
+    /* position: absolute; */
     opacity: 0;
+    cursor: pointer;
     height: 0;
     width: 0;
 }
 
-.radioLabel {
-    display: flex;
-    align-items: center;
-    margin-bottom: 10px;
+.CheckboxSpan {
+    position: absolute;
+    /* top: 0; */
+    /* left: 0; */
+    height: 25px;
+    width: 25px;
+    /* background-color: #eee; */
+    border: 2px solid;
+    border-color: var(--blue-600);
+    border-radius: 50%;
 }
 
-.radioButton {
-    height: 20px;
-    width: 20px;
-    border-radius: 100px;
-    border: 1px solid green;
+.CheckboxLabel:hover input ~ .CheckboxSpan {
+    /* opacity: 0.2; */
+    background-color: rgba(30, 111, 159, .2);
+    border-color: var(--blue-300);
+}
+
+.CheckboxLabel input:checked ~ .CheckboxSpan {
+    background-color: var(--purple-300);
+    border: none;
+}
+
+.CheckboxLabel input:checked ~ .CheckboxSpan:hover {
+    background-color: none;
+    background-color: var(--purple-600);
+    border: none;
+}
+
+.CheckboxSpan::after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.CheckboxLabel input:checked ~ .CheckboxSpan:after {
     display: block;
 }
 
-input[type="radio"] + label {
-    color: #ccc;
-    font-style: italic;
-    -webkit-box-shadow: 0px 0px 1px rgba(255, 255, 255, 0.2);
-    box-shadow: 0px 0px 1px 1px rgba(255, 255, 255, 0.2);
-}
-
-input[type="radio"]:checked + label span {
-    color: red;
-}
-
-input[type="radio"]:checked + label .radioButton {
-    background: radial-gradient(circle, red 45%, transparent 50%)
+.CheckboxLabel .CheckboxSpan:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid var(--gray-100);
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
 }

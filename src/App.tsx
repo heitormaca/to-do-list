@@ -33,12 +33,12 @@ function App() {
         </div>
       </div>
 
-      <div>
+      <div style={{ background: '#262626' }}>
         <div>
           <div>
-            <input className={styles.radio} type="radio" name="completed" />
-            <label className={styles.radioLabel}>
-              <div className={styles.radioButton}></div>
+            <label className={styles.CheckboxLabel}>
+              <input className={styles.Checkbox} type="checkbox" name="completed" />
+              <span className={styles.CheckboxSpan}></span>
             </label>
           </div>
           <p>
